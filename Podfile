@@ -4,7 +4,9 @@ platform :ios, '11.2'
 use_frameworks!
 
 target 'jackjamesjt' do
-  pod 'Alamofire', '~> 4.5'
+
+  pod 'Alamofire', '~> 4.7'
+  pod 'p2.OAuth2', '~> 3.0'
 
   target 'jackjamesjtTests' do
     inherit! :search_paths
