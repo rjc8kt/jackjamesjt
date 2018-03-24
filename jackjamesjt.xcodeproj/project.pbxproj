@@ -10,6 +10,7 @@
 		05FCA3D436B059B6A4AB4E2D /* Pods_jackjamesjtUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD205BCC9307EEA5A408E9C1 /* Pods_jackjamesjtUITests.framework */; };
 		2997D780B9508740EB70689D /* Pods_jackjamesjt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D68880ED3BCC2DD507F9D9C /* Pods_jackjamesjt.framework */; };
 		656BF8AD172B8F274C32CC1D /* Pods_jackjamesjtTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B81EEFE1BF905552C10B431 /* Pods_jackjamesjtTests.framework */; };
+		E57C1E562066C43F00046557 /* SafeTrek.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57C1E552066C43F00046557 /* SafeTrek.swift */; };
 		E7497CA52066B47C00611B32 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7497CA42066B47C00611B32 /* AppDelegate.swift */; };
 		E7497CA72066B47C00611B32 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7497CA62066B47C00611B32 /* ViewController.swift */; };
 		E7497CAA2066B47C00611B32 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7497CA82066B47C00611B32 /* Main.storyboard */; };
@@ -45,6 +46,7 @@
 		7A68A99E34185E698DC1B7BC /* Pods-jackjamesjtTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jackjamesjtTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-jackjamesjtTests/Pods-jackjamesjtTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8B81EEFE1BF905552C10B431 /* Pods_jackjamesjtTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_jackjamesjtTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD205BCC9307EEA5A408E9C1 /* Pods_jackjamesjtUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_jackjamesjtUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E57C1E552066C43F00046557 /* SafeTrek.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafeTrek.swift; sourceTree = "<group>"; };
 		E7497CA12066B47C00611B32 /* jackjamesjt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = jackjamesjt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7497CA42066B47C00611B32 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E7497CA62066B47C00611B32 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 				E7497CB02066B47C00611B32 /* LaunchScreen.storyboard */,
 				E7497CB32066B47C00611B32 /* Info.plist */,
 				E7497CAB2066B47C00611B32 /* jackjamesjt.xcdatamodeld */,
+				E57C1E552066C43F00046557 /* SafeTrek.swift */,
 			);
 			path = jackjamesjt;
 			sourceTree = "<group>";
@@ -463,6 +466,7 @@
 			files = (
 				E7497CA72066B47C00611B32 /* ViewController.swift in Sources */,
 				E7497CA52066B47C00611B32 /* AppDelegate.swift in Sources */,
+				E57C1E562066C43F00046557 /* SafeTrek.swift in Sources */,
 				E7497CAD2066B47C00611B32 /* jackjamesjt.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
