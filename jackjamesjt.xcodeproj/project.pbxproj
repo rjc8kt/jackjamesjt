@@ -12,13 +12,15 @@
 		656BF8AD172B8F274C32CC1D /* Pods_jackjamesjtTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B81EEFE1BF905552C10B431 /* Pods_jackjamesjtTests.framework */; };
 		E57C1E562066C43F00046557 /* SafeTrek.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57C1E552066C43F00046557 /* SafeTrek.swift */; };
 		E7497CA52066B47C00611B32 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7497CA42066B47C00611B32 /* AppDelegate.swift */; };
-		E7497CA72066B47C00611B32 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7497CA62066B47C00611B32 /* ViewController.swift */; };
+		E7497CA72066B47C00611B32 /* MessageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7497CA62066B47C00611B32 /* MessageController.swift */; };
 		E7497CAA2066B47C00611B32 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7497CA82066B47C00611B32 /* Main.storyboard */; };
 		E7497CAD2066B47C00611B32 /* jackjamesjt.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E7497CAB2066B47C00611B32 /* jackjamesjt.xcdatamodeld */; };
 		E7497CAF2066B47C00611B32 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7497CAE2066B47C00611B32 /* Assets.xcassets */; };
 		E7497CB22066B47C00611B32 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7497CB02066B47C00611B32 /* LaunchScreen.storyboard */; };
 		E7497CBD2066B47C00611B32 /* jackjamesjtTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7497CBC2066B47C00611B32 /* jackjamesjtTests.swift */; };
 		E7497CC82066B47C00611B32 /* jackjamesjtUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7497CC72066B47C00611B32 /* jackjamesjtUITests.swift */; };
+		E7497CDB20670C1F00611B32 /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7497CDA20670C1F00611B32 /* AlertController.swift */; };
+		E7497CDD20671A8F00611B32 /* CheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7497CDC20671A8F00611B32 /* CheckBox.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,7 +51,7 @@
 		E57C1E552066C43F00046557 /* SafeTrek.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafeTrek.swift; sourceTree = "<group>"; };
 		E7497CA12066B47C00611B32 /* jackjamesjt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = jackjamesjt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7497CA42066B47C00611B32 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E7497CA62066B47C00611B32 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E7497CA62066B47C00611B32 /* MessageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageController.swift; sourceTree = "<group>"; };
 		E7497CA92066B47C00611B32 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E7497CAC2066B47C00611B32 /* jackjamesjt.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = jackjamesjt.xcdatamodel; sourceTree = "<group>"; };
 		E7497CAE2066B47C00611B32 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -61,6 +63,8 @@
 		E7497CC32066B47C00611B32 /* jackjamesjtUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = jackjamesjtUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7497CC72066B47C00611B32 /* jackjamesjtUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = jackjamesjtUITests.swift; sourceTree = "<group>"; };
 		E7497CC92066B47C00611B32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E7497CDA20670C1F00611B32 /* AlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
+		E7497CDC20671A8F00611B32 /* CheckBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBox.swift; sourceTree = "<group>"; };
 		E833B1262040BAB1FC113B74 /* Pods-jackjamesjtTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jackjamesjtTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-jackjamesjtTests/Pods-jackjamesjtTests.release.xcconfig"; sourceTree = "<group>"; };
 		F9A0B5E663DAE2BF7F1E7AD3 /* Pods-jackjamesjtUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jackjamesjtUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-jackjamesjtUITests/Pods-jackjamesjtUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -120,7 +124,6 @@
 			isa = PBXGroup;
 			children = (
 				E7497CA32066B47C00611B32 /* jackjamesjt */,
-				E7497CBB2066B47C00611B32 /* jackjamesjtTests */,
 				E7497CC62066B47C00611B32 /* jackjamesjtUITests */,
 				E7497CA22066B47C00611B32 /* Products */,
 				D375629BCA08F14646BA0863 /* Pods */,
@@ -142,12 +145,15 @@
 			isa = PBXGroup;
 			children = (
 				E7497CA42066B47C00611B32 /* AppDelegate.swift */,
-				E7497CA62066B47C00611B32 /* ViewController.swift */,
+				E7497CA62066B47C00611B32 /* MessageController.swift */,
+				E7497CDA20670C1F00611B32 /* AlertController.swift */,
+				E7497CDC20671A8F00611B32 /* CheckBox.swift */,
 				E7497CA82066B47C00611B32 /* Main.storyboard */,
 				E7497CAE2066B47C00611B32 /* Assets.xcassets */,
 				E7497CB02066B47C00611B32 /* LaunchScreen.storyboard */,
 				E7497CB32066B47C00611B32 /* Info.plist */,
 				E7497CAB2066B47C00611B32 /* jackjamesjt.xcdatamodeld */,
+				E7497CBB2066B47C00611B32 /* jackjamesjtTests */,
 				E57C1E552066C43F00046557 /* SafeTrek.swift */,
 			);
 			path = jackjamesjt;
@@ -248,6 +254,7 @@
 				TargetAttributes = {
 					E7497CA02066B47C00611B32 = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
 					E7497CB72066B47C00611B32 = {
@@ -468,10 +475,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E7497CA72066B47C00611B32 /* ViewController.swift in Sources */,
+				E7497CDB20670C1F00611B32 /* AlertController.swift in Sources */,
+				E7497CA72066B47C00611B32 /* MessageController.swift in Sources */,
 				E7497CA52066B47C00611B32 /* AppDelegate.swift in Sources */,
 				E57C1E562066C43F00046557 /* SafeTrek.swift in Sources */,
 				E7497CAD2066B47C00611B32 /* jackjamesjt.xcdatamodeld in Sources */,
+				E7497CDD20671A8F00611B32 /* CheckBox.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -638,11 +647,13 @@
 			baseConfigurationReference = 4A72A6BA4447B3CCA6CB5E69 /* Pods-jackjamesjt.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = jackjamesjt/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = rjc8kt.jackjamesjt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -653,6 +664,7 @@
 			baseConfigurationReference = 6740591243A512234A7528D7 /* Pods-jackjamesjt.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = jackjamesjt/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
