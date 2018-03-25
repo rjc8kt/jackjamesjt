@@ -22,20 +22,22 @@ class SafeTrekAPI {
         let alarm_href = "alarms"
         let params : [String: Any] = [
             "services": [
-                "police": true,
-                "fire": false,
-                "medical": false
+                "police": police,
+                "fire": fire,
+                "medical": medical
             ],
             "location.coordinates": [
-                "lat": 34.32334,
-                "lng": -117.3343,
+                "lat": lat,
+                "lng": lon,
                 "accuracy": 5
             ]
         ]
+        print ("making request with params", params)
         makeSafeTrekRequest(href: alarm_href, params: params)
     }
 
     func makeSafeTrekRequest(href: String, params: Dictionary<String, Any>) -> Void {
+        print ("token ", getToken())
         let headers: HTTPHeaders = [
             "Authorization": "Bearer: " + getToken(),
             "Content-Type": "application/json"
