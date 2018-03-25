@@ -15,6 +15,7 @@ import ApiAI
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     let apiai = ApiAI.shared()!
+    let apiaiClientToken = "6849f1bcfdae4d0f9f98b44e9b87a20e"
     
     var window: UIWindow?
 
@@ -58,7 +59,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        // Configure DialogFlow API
+        let configuration = AIDefaultConfiguration()
+        configuration.clientAccessToken = apiaiClientToken
+        
+        let apiai = ApiAI.shared()
+        apiai?.configuration = configuration
+        
         return true
     }
 

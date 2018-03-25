@@ -7,26 +7,62 @@
 //
 
 import UIKit
+import ApiAI
+import AVFoundation
 
 class MessageController: UIViewController {
 
     @IBOutlet weak var ChatBox: UITextField!
     
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
-    //KEYBOARD AND TEXT FIELD SET UP
     
+    let soundEnabled = true
+    
+    let speechSynthesizer = AVSpeechSynthesizer()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationItem.hidesBackButton = true
+    
         NotificationCenter.default.addObserver(self, selector: #selector(MessageController.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(MessageController.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
         
-        // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    func speechAndText(text: String) {
         
-        self.navigationItem.hidesBackButton = true;
-
+        print("text:", text)
         
+        if soundEnabled {
+            let speechUtterance = AVSpeechUtterance(string: text)
+            speechSynthesizer.speak(speechUtterance)
+            UIView.animate(withDuration: 1.0, delay: 0.0, options: .curveEaseInOut, animations: {
+            }, completion: nil)
+        }
+    }
+    
+    @IBAction func sendButtonPressed(_ sender: Any) {
+        let request = ApiAI.shared().textRequest()
+        
+        if let text = self.ChatBox.text, text != "" {
+            request?.query = text
+        } else {
+            return
+        }
+        
+        request?.setMappedCompletionBlockSuccess({ (request, response) in
+            let response = response as! AIResponse
+            if let textResponse = response.result.fulfillment.speech {
+                self.speechAndText(text: textResponse)
+            }
+        }, failure: { (request, error) in
+            print(error!)
+        })
+        
+        ApiAI.shared().enqueue(request)
+        ChatBox.text = ""
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -84,13 +120,5 @@ class MessageController: UIViewController {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
-    
-    // END OF KEYBOARD AND TEXT FIELD SET UP
-
-    
-    
-
-
-
 }
 
