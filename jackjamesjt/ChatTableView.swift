@@ -11,5 +11,5 @@ import UIKit
 class ChatTableView: UITableView {}
 
 class ChatTableViewCell: UITableViewCell {
-    @IBOutlet weak var messageText: UITextField!
+    @IBOutlet weak var messageText: UILabel!
 }

@@ -11,6 +11,9 @@
 		2997D780B9508740EB70689D /* Pods_jackjamesjt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D68880ED3BCC2DD507F9D9C /* Pods_jackjamesjt.framework */; };
 		656BF8AD172B8F274C32CC1D /* Pods_jackjamesjtTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B81EEFE1BF905552C10B431 /* Pods_jackjamesjtTests.framework */; };
 		E57C1E562066C43F00046557 /* SafeTrek.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57C1E552066C43F00046557 /* SafeTrek.swift */; };
+		E5C3A9172067D61B00610B66 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5C3A91A2067D61B00610B66 /* Alamofire.framework */; };
+		E5C3A9182067D61B00610B66 /* ApiAI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5C3A91B2067D61B00610B66 /* ApiAI.framework */; };
+		E5C3A9192067D61B00610B66 /* p2_OAuth2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5C3A91C2067D61B00610B66 /* p2_OAuth2.framework */; };
 		E5EDAC2E2067585E00470F12 /* ChatTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EDAC2D2067585E00470F12 /* ChatTableView.swift */; };
 		E7497CA52066B47C00611B32 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7497CA42066B47C00611B32 /* AppDelegate.swift */; };
 		E7497CA72066B47C00611B32 /* MessageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7497CA62066B47C00611B32 /* MessageController.swift */; };
@@ -51,6 +54,9 @@
 		8B81EEFE1BF905552C10B431 /* Pods_jackjamesjtTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_jackjamesjtTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD205BCC9307EEA5A408E9C1 /* Pods_jackjamesjtUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_jackjamesjtUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E57C1E552066C43F00046557 /* SafeTrek.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafeTrek.swift; sourceTree = "<group>"; };
+		E5C3A91A2067D61B00610B66 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E5C3A91B2067D61B00610B66 /* ApiAI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ApiAI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E5C3A91C2067D61B00610B66 /* p2_OAuth2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = p2_OAuth2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5EDAC2D2067585E00470F12 /* ChatTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTableView.swift; sourceTree = "<group>"; };
 		E7497CA12066B47C00611B32 /* jackjamesjt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = jackjamesjt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7497CA42066B47C00611B32 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -78,6 +84,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5C3A9172067D61B00610B66 /* Alamofire.framework in Frameworks */,
+				E5C3A9182067D61B00610B66 /* ApiAI.framework in Frameworks */,
+				E5C3A9192067D61B00610B66 /* p2_OAuth2.framework in Frameworks */,
 				2997D780B9508740EB70689D /* Pods_jackjamesjt.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -104,6 +113,9 @@
 		B0CC7A9F3BDC2EB386977EED /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E5C3A91A2067D61B00610B66 /* Alamofire.framework */,
+				E5C3A91B2067D61B00610B66 /* ApiAI.framework */,
+				E5C3A91C2067D61B00610B66 /* p2_OAuth2.framework */,
 				4D68880ED3BCC2DD507F9D9C /* Pods_jackjamesjt.framework */,
 				8B81EEFE1BF905552C10B431 /* Pods_jackjamesjtTests.framework */,
 				AD205BCC9307EEA5A408E9C1 /* Pods_jackjamesjtUITests.framework */,

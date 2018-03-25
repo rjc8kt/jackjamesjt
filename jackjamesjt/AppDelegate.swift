@@ -25,10 +25,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let accessToken = urlComponents?.queryItems?[0].value
         
         // CORE DATA
-        guard let appDelegate =
-            UIApplication.shared.delegate as? AppDelegate else {
-                return false
-        }
+        let appDelegate =
+            UIApplication.shared.delegate as! AppDelegate
         
         let managedContext =
             appDelegate.persistentContainer.viewContext

@@ -18,10 +18,7 @@ class LoginController: UIViewController {
     }
     override func viewDidLoad() {
         // CORE DATA
-        guard let appDelegate =
-            UIApplication.shared.delegate as? AppDelegate else {
-                return
-        }
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
         
         let managedContext =
             appDelegate.persistentContainer.viewContext
@@ -33,6 +30,7 @@ class LoginController: UIViewController {
             let results = try managedContext.fetch( fetchRequest )
             if ( results.count > 0 ) {
                 let latest = results[results.count - 1]
+                print("latest: \(latest.value(forKeyPath: "refreshToken"))")
                 
                 if ( latest.value(forKey: "refreshToken" ) == nil ) {
                     super.viewDidLoad()
@@ -42,6 +40,8 @@ class LoginController: UIViewController {
                 let latrefToken = latest.value(forKeyPath: "refreshToken") as! String
                 print( latrefToken )
                 let lataccToken = latest.value(forKeyPath: "accessToken") as! String
+                
+                print("found refresh \(latrefToken) and acc \(lataccToken)")
                 
                 if ( lataccToken != "" ) {
                     let viewController: UIViewController = self.storyboard!.instantiateViewController(withIdentifier: "MessageController")

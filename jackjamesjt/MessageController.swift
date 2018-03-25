@@ -24,6 +24,8 @@ class MessageController: UIViewController, UITableViewDelegate, UITableViewDataS
     let speechSynthesizer = AVSpeechSynthesizer()
 
     override func viewDidLoad() {
+        messageItems = ["my stomach hurts", " okay, do you feel any of the following symptoms: the pain is in your lower right abdomen and tender to the touch, you're vomiting blood, you're struggling to breath" ]
+        
         super.viewDidLoad()
         
         // Hide lines between cells in chat table view
@@ -31,7 +33,7 @@ class MessageController: UIViewController, UITableViewDelegate, UITableViewDataS
         self.chatTableView.dataSource = self
         self.chatTableView.separatorStyle = UITableViewCellSeparatorStyle.none
         self.chatTableView.rowHeight = UITableViewAutomaticDimension
-        self.chatTableView.estimatedRowHeight = 100
+        self.chatTableView.estimatedRowHeight = 140
         
         self.navigationItem.hidesBackButton = true
     
@@ -148,7 +150,6 @@ class MessageController: UIViewController, UITableViewDelegate, UITableViewDataS
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print ("rows \(messageItems.count)")
         return messageItems.count
     }
     
@@ -156,9 +157,21 @@ class MessageController: UIViewController, UITableViewDelegate, UITableViewDataS
         let cell = chatTableView.dequeueReusableCell(withIdentifier: "chatTableViewCell", for: indexPath) as! ChatTableViewCell
         
         cell.messageText.text = messageItems[indexPath.row]
+        print("message text \(messageItems[indexPath.row])")
+        
+        cell.contentView.setNeedsLayout()
+        cell.contentView.layoutIfNeeded()
         
         return cell
     }
+    
+//    func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+//        return tableView.rowHeight
+//    }
+//
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return UITableViewAutomaticDimension
+//    }
     
 }
 
