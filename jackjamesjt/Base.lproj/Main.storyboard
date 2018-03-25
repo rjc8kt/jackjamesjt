@@ -38,15 +38,15 @@
                                 <rect key="frame" x="10" y="74" width="355" height="533"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="49" id="tlg-Lh-35F" customClass="ChatTableViewCell" customModule="jackjamesjt" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="355" height="49"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="chatTableViewCell" id="tlg-Lh-35F" customClass="ChatTableViewCell" customModule="jackjamesjt" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="355" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tlg-Lh-35F" id="M2y-52-qJi" customClass="ChatTableViewCell" customModule="jackjamesjt" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="355" height="48.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="355" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="My stomach hurts" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yN8-jF-1e9">
-                                                    <rect key="frame" x="5" y="5" width="177" height="38.5"/>
+                                                    <rect key="frame" x="5" y="5" width="340" height="33.5"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <textInputTraits key="textInputTraits"/>
@@ -55,6 +55,7 @@
                                             <color key="backgroundColor" red="0.92835168393782386" green="0.92835168393782386" blue="0.92835168393782386" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="yN8-jF-1e9" secondAttribute="trailing" constant="10" id="EYj-8h-3ID"/>
                                                 <constraint firstAttribute="bottom" secondItem="yN8-jF-1e9" secondAttribute="bottom" constant="5" id="O7N-xg-EHt"/>
                                                 <constraint firstItem="yN8-jF-1e9" firstAttribute="top" secondItem="M2y-52-qJi" secondAttribute="top" constant="5" id="OBB-Cq-QYr"/>
                                                 <constraint firstItem="yN8-jF-1e9" firstAttribute="leading" secondItem="M2y-52-qJi" secondAttribute="leading" constant="5" id="zxK-xJ-hfl"/>
@@ -62,7 +63,6 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="messageText" destination="yN8-jF-1e9" id="8Ho-xD-x4W"/>
-                                            <outlet property="text" destination="yN8-jF-1e9" id="f8a-Xq-er1"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -92,6 +92,7 @@
                     <connections>
                         <outlet property="ChatBox" destination="Ilm-1y-gE3" id="VD4-DF-Mn5"/>
                         <outlet property="bottomConstraint" destination="Lp3-bO-FKv" id="3Xl-nf-XnW"/>
+                        <outlet property="chatTableView" destination="hGl-Qa-5i8" id="vrf-Oc-TPH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -260,6 +261,6 @@
         <image name="UncheckedBox" width="225" height="225"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="FkL-gM-YYR"/>
+        <segue reference="RbD-3F-iVb"/>
     </inferredMetricsTieBreakers>
 </document>

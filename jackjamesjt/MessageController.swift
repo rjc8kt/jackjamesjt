@@ -10,18 +10,28 @@ import UIKit
 import ApiAI
 import AVFoundation
 
-class MessageController: UIViewController {
+class MessageController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var ChatBox: UITextField!
+    @IBOutlet weak var chatTableView: ChatTableView!
     
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     
     let soundEnabled = true
     
+    var messageItems = [String]()
+    
     let speechSynthesizer = AVSpeechSynthesizer()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Hide lines between cells in chat table view
+        self.chatTableView.delegate = self
+        self.chatTableView.dataSource = self
+        self.chatTableView.separatorStyle = UITableViewCellSeparatorStyle.none
+        self.chatTableView.rowHeight = UITableViewAutomaticDimension
+        self.chatTableView.estimatedRowHeight = 100
         
         self.navigationItem.hidesBackButton = true
     
@@ -31,9 +41,18 @@ class MessageController: UIViewController {
         
     }
     
+    func addMessage(message: String) {
+        chatTableView.beginUpdates()
+        messageItems.append(message)
+        let newIndexPath = IndexPath(row: messageItems.count-1, section: 0)
+        chatTableView.insertRows(at: [newIndexPath], with: UITableViewRowAnimation.left)
+        chatTableView.endUpdates()
+    }
+    
     func speechAndText(text: String) {
         
         print("text:", text)
+        addMessage(message: text)
         
         if soundEnabled {
             let speechUtterance = AVSpeechUtterance(string: text)
@@ -47,6 +66,7 @@ class MessageController: UIViewController {
         let request = ApiAI.shared().textRequest()
         
         if let text = self.ChatBox.text, text != "" {
+            addMessage(message: text)
             request?.query = text
         } else {
             return
@@ -120,5 +140,25 @@ class MessageController: UIViewController {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
+    
+    
+    // TableView Delegate methods for messages
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print ("rows \(messageItems.count)")
+        return messageItems.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = chatTableView.dequeueReusableCell(withIdentifier: "chatTableViewCell", for: indexPath) as! ChatTableViewCell
+        
+        cell.messageText.text = messageItems[indexPath.row]
+        
+        return cell
+    }
+    
 }
 
