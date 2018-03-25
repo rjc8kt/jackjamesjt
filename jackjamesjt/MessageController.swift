@@ -24,14 +24,14 @@ class MessageController: UIViewController, UITableViewDelegate, UITableViewDataS
     let speechSynthesizer = AVSpeechSynthesizer()
 //the pain is in your lower right abdomen and tender to the touch, you're vomiting blood, you're struggling to breath
     override func viewDidLoad() {
-        messageItems = [["my stomach hurts", true], [" okay, do you feel any of the following symptoms: the pain is in your lower right abdomen and tender to the touch, you're vomiting blood, you're struggling to breath", false] ]
+//        messageItems = [["my stomach hurts", true], [" okay, do you feel any of the following symptoms: the pain is in your lower right abdomen and tender to the touch, you're vomiting blood, you're struggling to breath", false] ]
         
         super.viewDidLoad()
         
         // Hide lines between cells in chat table view
         self.chatTableView.delegate = self
         self.chatTableView.dataSource = self
-        self.chatTableView.separatorStyle = UITableViewCellSeparatorStyle.none
+//        self.chatTableView.separatorStyle = UITableViewCellSeparatorStyle.none
         self.chatTableView.rowHeight = UITableViewAutomaticDimension
         self.chatTableView.estimatedRowHeight = 140
         

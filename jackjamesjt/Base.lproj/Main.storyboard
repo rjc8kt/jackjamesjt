@@ -37,9 +37,9 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hGl-Qa-5i8" customClass="ChatTableView" customModule="jackjamesjt" customModuleProvider="target">
-                                <rect key="frame" x="10" y="126" width="355" height="481"/>
+                                <rect key="frame" x="10" y="126" width="355" height="404"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="separatorColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="chatTableViewCell" rowHeight="120" id="tlg-Lh-35F">
                                         <rect key="frame" x="0.0" y="28" width="355" height="120"/>
@@ -58,7 +58,7 @@
                         <color key="backgroundColor" red="0.10980392156862745" green="0.28235294117647058" blue="0.40392156862745099" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Bwm-hP-CaG" firstAttribute="centerY" secondItem="Ilm-1y-gE3" secondAttribute="centerY" id="1UV-NI-Oxy"/>
-                            <constraint firstItem="Ilm-1y-gE3" firstAttribute="top" secondItem="hGl-Qa-5i8" secondAttribute="bottom" constant="10" id="8Oc-n5-LB6"/>
+                            <constraint firstItem="Ilm-1y-gE3" firstAttribute="top" secondItem="hGl-Qa-5i8" secondAttribute="bottom" constant="87" id="8Oc-n5-LB6"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hGl-Qa-5i8" secondAttribute="trailing" constant="10" id="Bms-TC-xHE"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Ilm-1y-gE3" secondAttribute="bottom" constant="20" id="Lp3-bO-FKv"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Bwm-hP-CaG" secondAttribute="trailing" constant="5" id="VEv-zC-fPa"/>
