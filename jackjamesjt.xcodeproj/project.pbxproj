@@ -26,6 +26,7 @@
 		E7497CDB20670C1F00611B32 /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7497CDA20670C1F00611B32 /* AlertController.swift */; };
 		E7497CDD20671A8F00611B32 /* CheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7497CDC20671A8F00611B32 /* CheckBox.swift */; };
 		E7497CE52067326500611B32 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7497CE42067326500611B32 /* LoginController.swift */; };
+		E7497CE72067E31200611B32 /* AlertedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7497CE62067E31200611B32 /* AlertedController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,7 @@
 		E7497CDA20670C1F00611B32 /* AlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
 		E7497CDC20671A8F00611B32 /* CheckBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBox.swift; sourceTree = "<group>"; };
 		E7497CE42067326500611B32 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		E7497CE62067E31200611B32 /* AlertedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertedController.swift; sourceTree = "<group>"; };
 		E833B1262040BAB1FC113B74 /* Pods-jackjamesjtTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jackjamesjtTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-jackjamesjtTests/Pods-jackjamesjtTests.release.xcconfig"; sourceTree = "<group>"; };
 		F9A0B5E663DAE2BF7F1E7AD3 /* Pods-jackjamesjtUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jackjamesjtUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-jackjamesjtUITests/Pods-jackjamesjtUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -164,6 +166,7 @@
 				E7497CA62066B47C00611B32 /* MessageController.swift */,
 				E7497CDA20670C1F00611B32 /* AlertController.swift */,
 				E7497CDC20671A8F00611B32 /* CheckBox.swift */,
+				E7497CE62067E31200611B32 /* AlertedController.swift */,
 				E7497CA82066B47C00611B32 /* Main.storyboard */,
 				E7497CAE2066B47C00611B32 /* Assets.xcassets */,
 				E7497CB02066B47C00611B32 /* LaunchScreen.storyboard */,
@@ -493,6 +496,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7497CE72067E31200611B32 /* AlertedController.swift in Sources */,
 				E7497CDB20670C1F00611B32 /* AlertController.swift in Sources */,
 				E5EDAC2E2067585E00470F12 /* ChatTableView.swift in Sources */,
 				E7497CA72066B47C00611B32 /* MessageController.swift in Sources */,
