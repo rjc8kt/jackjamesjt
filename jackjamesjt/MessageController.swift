@@ -16,6 +16,8 @@ class MessageController: UIViewController {
     
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     
+    let soundEnabled = true
+    
     let speechSynthesizer = AVSpeechSynthesizer()
 
     override func viewDidLoad() {
@@ -28,11 +30,15 @@ class MessageController: UIViewController {
     }
     
     func speechAndText(text: String) {
-        let speechUtterance = AVSpeechUtterance(string: text)
-        speechSynthesizer.speak(speechUtterance)
-        UIView.animate(withDuration: 1.0, delay: 0.0, options: .curveEaseInOut, animations: {
-            print("text:", text)
-        }, completion: nil)
+        
+        print("text:", text)
+        
+        if soundEnabled {
+            let speechUtterance = AVSpeechUtterance(string: text)
+            speechSynthesizer.speak(speechUtterance)
+            UIView.animate(withDuration: 1.0, delay: 0.0, options: .curveEaseInOut, animations: {
+            }, completion: nil)
+        }
     }
     
     @IBAction func sendButtonPressed(_ sender: Any) {

@@ -34,13 +34,21 @@
                                     <action selector="sendButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="364-l6-q6W"/>
                                 </connections>
                             </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hGl-Qa-5i8" customClass="ChatTableView" customModule="jackjamesjt" customModuleProvider="target">
+                                <rect key="frame" x="10" y="74" width="355" height="533"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="Ilm-1y-gE3" firstAttribute="top" secondItem="hGl-Qa-5i8" secondAttribute="bottom" constant="10" id="8Oc-n5-LB6"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hGl-Qa-5i8" secondAttribute="trailing" constant="10" id="Bms-TC-xHE"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Ilm-1y-gE3" secondAttribute="bottom" constant="20" id="Lp3-bO-FKv"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Bwm-hP-CaG" secondAttribute="bottom" constant="20" id="UlV-UQ-V5e"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Bwm-hP-CaG" secondAttribute="trailing" constant="5" id="VEv-zC-fPa"/>
+                            <constraint firstItem="hGl-Qa-5i8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="eOi-0E-qhB"/>
                             <constraint firstItem="Ilm-1y-gE3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="kkq-XY-bVi"/>
+                            <constraint firstItem="hGl-Qa-5i8" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="pBg-CQ-VFR"/>
                             <constraint firstItem="Bwm-hP-CaG" firstAttribute="leading" secondItem="Ilm-1y-gE3" secondAttribute="trailing" id="xtb-M9-RrV"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
