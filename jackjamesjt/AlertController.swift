@@ -52,7 +52,7 @@ class AlertController: UIViewController, CLLocationManagerDelegate {
             print("Location services are not enabled")
         }
         print( latitude, " and ", longitude )
-        safeTrekAPI.createAlarm(police: true, fire: true, medical: true, lat: latitude, lon: longitude, callback: stupid)
+        safeTrekAPI.createAlarm(police: PoliceBox.isChecked, fire: FireBox.isChecked, medical: MedicalBox.isChecked, lat: latitude, lon: longitude, callback: stupid)
     }
     
     func stupid () -> String { return "" }
