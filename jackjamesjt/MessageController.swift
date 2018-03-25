@@ -53,19 +53,6 @@ class MessageController: UIViewController {
     }
     
     @objc func keyboardWillHide(notification:NSNotification) {
-        adjustingHeight(show: false, notification: notification)
-        // 1
-        var userInfo = notification.userInfo!
-        // 2
-        let keyboardFrame:CGRect = (userInfo[UIKeyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue
-        // 3
-        let animationDurarion = userInfo[UIKeyboardAnimationDurationUserInfoKey] as! TimeInterval
-        // 4
-        let changeInHeight = (keyboardFrame.height + 40)
-        //5
-        UIView.animate(withDuration: animationDurarion, animations: { () -> Void in
-            self.bottomConstraint.constant += changeInHeight
-        })
         self.bottomConstraint.constant = 20
     }
     
