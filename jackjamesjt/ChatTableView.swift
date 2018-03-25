@@ -12,7 +12,7 @@ class ChatTableView: UITableView {
     
 }
 
-
 class ChatTableViewCell: UITableViewCell {
     
+    @IBOutlet weak var text: UITextField!
 }
