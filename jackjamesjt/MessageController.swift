@@ -57,6 +57,11 @@ class MessageController: UIViewController, UITableViewDelegate, UITableViewDataS
             chatTableView.insertRows(at: [newIndexPath], with: UITableViewRowAnimation.left)
         }
         chatTableView.endUpdates()
+        
+        // scroll to bottom of table
+        let maxTableHeight = chatTableView.contentSize.height - chatTableView.bounds.size.height
+        chatTableView.setContentOffset(CGPoint(x: 0.0, y: maxTableHeight), animated: true)
+        chatTableView.scrollToRow(at: IndexPath(row: messageItems.count-1, section:0), at: .bottom, animated: true)
     }
     
     func speechAndText(text: String) {
