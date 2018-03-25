@@ -57,6 +57,14 @@ class AlertController: UIViewController, CLLocationManagerDelegate {
         alertedMedical = MedicalBox.isChecked
         alertedFire = FireBox.isChecked
 //        print( vc.dispFire, vc.dispMedical, vc.dispPolice )
+        if ( latitude == nil || longitude == nil ) {
+            let alert = UIAlertController(title: "Enable Location Services", message: "Please try again.", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))
+            
+            self.present(alert, animated: true)
+            return
+        }
         safeTrekAPI.createAlarm(police: PoliceBox.isChecked, fire: FireBox.isChecked, medical: MedicalBox.isChecked, lat: latitude, lon: longitude, callback: stupid)
         
         if ( (FireBox.isChecked || MedicalBox.isChecked || PoliceBox.isChecked) && latitude != nil && longitude != nil ) {
