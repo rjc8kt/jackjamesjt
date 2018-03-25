@@ -27,6 +27,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         userInfo.set(accessToken, forKey: "ACCESS_TOKEN")
         
         print ("refresh:", refreshToken!, "access:", accessToken!)
+        
+        let mainStoryboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let initialViewController : UIViewController = mainStoryboard.instantiateViewController(withIdentifier: "MessageController") as UIViewController
+        let navigationController = self.window?.rootViewController as! UINavigationController
+//        navigationController.view(initialViewController, animated: true)
+        navigationController.viewControllers = [initialViewController]
+        
         return true
     }
 

@@ -8,8 +8,11 @@
 
 import UIKit
 import CoreLocation
+//import "SafeTrek.swift"
 
 class AlertController: UIViewController, CLLocationManagerDelegate {
+    
+    let safeTrekAPI = SafeTrekAPI()
 
     // Alert Button Has Been Pressed
     @IBAction func alertButton(_ sender: UIButton) {
@@ -49,7 +52,10 @@ class AlertController: UIViewController, CLLocationManagerDelegate {
             print("Location services are not enabled")
         }
         print( latitude, " and ", longitude )
+        safeTrekAPI.createAlarm(police: true, fire: true, medical: true, lat: latitude, lon: longitude, callback: stupid)
     }
+    
+    func stupid () -> String { return "" }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error){
         // Code here is called on an error - no edits needed.
