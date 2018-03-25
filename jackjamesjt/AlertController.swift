@@ -12,6 +12,7 @@ import CoreLocation
 
 class AlertController: UIViewController, CLLocationManagerDelegate {
     
+    var finalText:String!
     let safeTrekAPI = SafeTrekAPI()
 
     // Alert Button Has Been Pressed
@@ -52,7 +53,42 @@ class AlertController: UIViewController, CLLocationManagerDelegate {
             print("Location services are not enabled")
         }
         print( latitude, " and ", longitude )
+        alertedPolice = PoliceBox.isChecked
+        alertedMedical = MedicalBox.isChecked
+        alertedFire = FireBox.isChecked
+//        print( vc.dispFire, vc.dispMedical, vc.dispPolice )
+        if ( latitude == nil || longitude == nil ) {
+            let alert = UIAlertController(title: "Enable Location Services", message: "Please try again.", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))
+            
+            self.present(alert, animated: true)
+            return
+        }
         safeTrekAPI.createAlarm(police: PoliceBox.isChecked, fire: FireBox.isChecked, medical: MedicalBox.isChecked, lat: latitude, lon: longitude, callback: stupid)
+        
+        if ( (FireBox.isChecked || MedicalBox.isChecked || PoliceBox.isChecked) && latitude != nil && longitude != nil ) {
+            let alert = UIAlertController(title: "Alert Sent", message: "Your alert has been sent. Send another alert to update your location.", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))
+            
+            self.present(alert, animated: true)
+        }
+        else if ( !FireBox.isChecked && !MedicalBox.isChecked && !PoliceBox.isChecked ) {
+            let alert = UIAlertController(title: "No Alert Sent", message: "You need to check a box before an alert can be sent.", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))
+            
+            self.present(alert, animated: true)
+        }
+        else {
+            let alert = UIAlertController(title: "No Alert Sent", message: "Sorry, please try again or make sure Location Services are enabled.", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))
+            
+            self.present(alert, animated: true)
+        }
+        
     }
     
     func stupid () -> String { return "" }
@@ -130,6 +166,10 @@ class AlertController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var MedicalBox: CheckBox!
     
     @IBOutlet weak var PoliceBox: CheckBox!
+    
+    var alertedPolice = false
+    var alertedMedical = false
+    var alertedFire = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
