@@ -1,4 +1,4 @@
-platform :ios, '11.2'
+platform :ios, '8.0'
 
 # Install Alamofire
 use_frameworks!
