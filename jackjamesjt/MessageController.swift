@@ -19,12 +19,12 @@ class MessageController: UIViewController, UITableViewDelegate, UITableViewDataS
     
     let soundEnabled = true
     
-    var messageItems = [String]()
+    var messageItems = [[Any]]()
     
     let speechSynthesizer = AVSpeechSynthesizer()
-
+//the pain is in your lower right abdomen and tender to the touch, you're vomiting blood, you're struggling to breath
     override func viewDidLoad() {
-        messageItems = ["my stomach hurts", " okay, do you feel any of the following symptoms: the pain is in your lower right abdomen and tender to the touch, you're vomiting blood, you're struggling to breath" ]
+        messageItems = [["my stomach hurts", true], [" okay, do you feel any of the following symptoms: the pain is in your lower right abdomen and tender to the touch, you're vomiting blood, you're struggling to breath", false] ]
         
         super.viewDidLoad()
         
@@ -43,9 +43,9 @@ class MessageController: UIViewController, UITableViewDelegate, UITableViewDataS
         
     }
     
-    func addMessage(message: String) {
+    func addMessage(message: String, fromUser: Bool) {
         chatTableView.beginUpdates()
-        messageItems.append(message)
+        messageItems.append([message, fromUser])
         let newIndexPath = IndexPath(row: messageItems.count-1, section: 0)
         chatTableView.insertRows(at: [newIndexPath], with: UITableViewRowAnimation.left)
         chatTableView.endUpdates()
@@ -54,7 +54,7 @@ class MessageController: UIViewController, UITableViewDelegate, UITableViewDataS
     func speechAndText(text: String) {
         
         print("text:", text)
-        addMessage(message: text)
+        addMessage(message: text, fromUser: false)
         
         if soundEnabled {
             let speechUtterance = AVSpeechUtterance(string: text)
@@ -68,7 +68,7 @@ class MessageController: UIViewController, UITableViewDelegate, UITableViewDataS
         let request = ApiAI.shared().textRequest()
         
         if let text = self.ChatBox.text, text != "" {
-            addMessage(message: text)
+            addMessage(message: text, fromUser: true)
             request?.query = text
         } else {
             return
@@ -89,7 +89,7 @@ class MessageController: UIViewController, UITableViewDelegate, UITableViewDataS
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear( animated )
-        ChatBox.becomeFirstResponder()
+//        ChatBox.becomeFirstResponder()
     }
 
     override func didReceiveMemoryWarning() {
@@ -154,13 +154,49 @@ class MessageController: UIViewController, UITableViewDelegate, UITableViewDataS
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = chatTableView.dequeueReusableCell(withIdentifier: "chatTableViewCell", for: indexPath) as! ChatTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "chatTableViewCell", for: indexPath)
         
-        cell.messageText.text = messageItems[indexPath.row]
-        print("message text \(messageItems[indexPath.row])")
+        let messageText = messageItems[indexPath.row][0] as! String
+//        cell.messageText.text = messageText
+        cell.textLabel?.text = messageText
+        cell.textLabel?.numberOfLines = 0
+        cell.textLabel?.isUserInteractionEnabled = false
+        let grayVal = CGFloat(0.85)
+        cell.textLabel?.backgroundColor = UIColor(red: grayVal, green: grayVal, blue: grayVal, alpha: grayVal)
         
-        cell.contentView.setNeedsLayout()
-        cell.contentView.layoutIfNeeded()
+        if let layer = cell.textLabel?.layer {
+            layer.cornerRadius = 5
+            layer.masksToBounds = true
+            layer.shadowOffset = .zero
+            layer.shadowOpacity = 0.2
+            layer.shadowRadius = 10
+            layer.shadowColor = UIColor.black.cgColor
+            layer.masksToBounds = false
+        }
+
+//        let messageFromUser = messageItems[indexPath.row][1] as! Bool
+//        if messageFromUser {
+//            cell.messageText.textAlignment = NSTextAlignment.right
+//            cell.leftConstraint?.constant = 10.0
+//            cell.leftConstraint?.priority = UILayoutPriority.defaultLow
+//            cell.rightConstraint?.constant = 0.0
+//            cell.rightConstraint?.priority = UILayoutPriority.defaultHigh
+//        } else {
+//            cell.messageText.textAlignment = NSTextAlignment.left
+//            cell.leftConstraint?.constant = 0.0
+//            cell.leftConstraint?.priority = UILayoutPriority.defaultHigh
+//            cell.rightConstraint?.constant = 10.0
+//            cell.rightConstraint?.priority = UILayoutPriority.defaultLow
+//        }
+        
+        
+//        cell.contentView.setNeedsLayout()
+//        cell.contentView.layoutIfNeeded()
+//
+//        cell.layout()
+//
+//        cell.contentView.setNeedsLayout()
+//        cell.contentView.layoutIfNeeded()
         
         return cell
     }

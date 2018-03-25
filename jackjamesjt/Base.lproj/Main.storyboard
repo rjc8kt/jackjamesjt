@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -37,53 +36,31 @@
                                     <action selector="sendButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="364-l6-q6W"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hGl-Qa-5i8" customClass="ChatTableView" customModule="jackjamesjt" customModuleProvider="target">
-                                <rect key="frame" x="10" y="74" width="355" height="533"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hGl-Qa-5i8" customClass="ChatTableView" customModule="jackjamesjt" customModuleProvider="target">
+                                <rect key="frame" x="10" y="126" width="355" height="481"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="chatTableViewCell" rowHeight="120" id="tlg-Lh-35F" customClass="ChatTableViewCell" customModule="jackjamesjt" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="chatTableViewCell" rowHeight="120" id="tlg-Lh-35F">
                                         <rect key="frame" x="0.0" y="28" width="355" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tlg-Lh-35F" id="M2y-52-qJi" customClass="ChatTableViewCell" customModule="jackjamesjt" customModuleProvider="target">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tlg-Lh-35F" id="M2y-52-qJi" customClass="ChatTableViewCell" customModule="jackjamesjt" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="355" height="119.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n8p-cR-XKi">
-                                                    <rect key="frame" x="15" y="11" width="325" height="98"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="22" id="0gr-F4-9gB"/>
-                                                    </constraints>
-                                                    <string key="text">the pain is in your lower right abdomen and tender to the touch, you're vomiting blood, you're struggling to breathe
-</string>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <color key="backgroundColor" red="0.92835168393782386" green="0.92835168393782386" blue="0.92835168393782386" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <constraints>
-                                                <constraint firstItem="n8p-cR-XKi" firstAttribute="top" secondItem="M2y-52-qJi" secondAttribute="topMargin" id="Lms-DF-biQ"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="n8p-cR-XKi" secondAttribute="trailing" id="S4g-5G-hCg"/>
-                                                <constraint firstItem="n8p-cR-XKi" firstAttribute="leading" secondItem="M2y-52-qJi" secondAttribute="leadingMargin" id="cQ6-GP-1Bl"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="n8p-cR-XKi" secondAttribute="bottom" id="fIu-IN-Eg0"/>
-                                            </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <connections>
-                                            <outlet property="messageText" destination="n8p-cR-XKi" id="cqK-ck-1ED"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="0.10980392156862745" green="0.28235294117647058" blue="0.40392156862745099" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="Bwm-hP-CaG" firstAttribute="centerY" secondItem="Ilm-1y-gE3" secondAttribute="centerY" id="1UV-NI-Oxy"/>
                             <constraint firstItem="Ilm-1y-gE3" firstAttribute="top" secondItem="hGl-Qa-5i8" secondAttribute="bottom" constant="10" id="8Oc-n5-LB6"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hGl-Qa-5i8" secondAttribute="trailing" constant="10" id="Bms-TC-xHE"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Ilm-1y-gE3" secondAttribute="bottom" constant="20" id="Lp3-bO-FKv"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Bwm-hP-CaG" secondAttribute="bottom" constant="20" id="UlV-UQ-V5e"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Bwm-hP-CaG" secondAttribute="trailing" constant="5" id="VEv-zC-fPa"/>
                             <constraint firstItem="hGl-Qa-5i8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="eOi-0E-qhB"/>
                             <constraint firstItem="Ilm-1y-gE3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="kkq-XY-bVi"/>
@@ -217,9 +194,10 @@
             <objects>
                 <navigationController storyboardIdentifier="NavigationController" automaticallyAdjustsScrollViewInsets="NO" id="0qX-Dl-3va" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="tCa-N5-s7d">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="tCa-N5-s7d">
+                        <rect key="frame" x="0.0" y="20" width="375" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.9283516839" green="0.9283516839" blue="0.9283516839" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

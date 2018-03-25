@@ -17,6 +17,8 @@ class LoginController: UIViewController {
         UIApplication.shared.open(URL(string: logInLink)!)
     }
     override func viewDidLoad() {
+        let viewController: UIViewController = self.storyboard!.instantiateViewController(withIdentifier: "MessageController")
+        self.navigationController?.pushViewController(viewController, animated: false)
         // CORE DATA
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         
