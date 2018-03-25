@@ -139,7 +139,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <state key="normal" title="Login with SafeTrek"/>
                                 <connections>
-                                    <segue destination="0qX-Dl-3va" kind="presentation" id="Q32-Wc-EQf"/>
+                                    <action selector="logIn:" destination="ZAY-07-QKg" eventType="touchUpInside" id="DoE-g0-MUC"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -211,6 +211,6 @@
         <image name="UncheckedBox" width="225" height="225"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Q32-Wc-EQf"/>
+        <segue reference="RbD-3F-iVb"/>
     </inferredMetricsTieBreakers>
 </document>

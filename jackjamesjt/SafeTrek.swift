@@ -11,6 +11,10 @@ import Alamofire
 
 var api_endpoint_base = "https://api.safetrek.io/v1/"
 
+func getToken() -> String {
+    return UserDefaults.init().string(forKey: "ACCESS_TOKEN") ?? ""
+}
+
 func createAlarm(police: Bool, fire: Bool, medical: Bool, callback: (() -> String)) -> Void {
     let alarm_href = "alarms"
     let params : [String: Any] = [
@@ -26,10 +30,6 @@ func createAlarm(police: Bool, fire: Bool, medical: Bool, callback: (() -> Strin
         ]
     ]
     makeSafeTrekRequest(href: alarm_href, params: params)
-}
-
-func getToken() -> String {
-    return ""
 }
 
 func makeSafeTrekRequest(href: String, params: Dictionary<String, Any>) -> Void {

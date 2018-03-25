@@ -18,6 +18,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
 
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+        let urlComponents = URLComponents.init(url: url, resolvingAgainstBaseURL: false)
+        let userInfo = UserDefaults.init()
+        let refreshToken = urlComponents?.queryItems?[2].value
+        let accessToken = urlComponents?.queryItems?[0].value
+        userInfo.set(refreshToken, forKey: "REFRESH_TOKEN")
+        userInfo.set(accessToken, forKey: "ACCESS_TOKEN")
+        
+        print ("refresh:", refreshToken!, "access:", accessToken!)
+        return true
+    }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.

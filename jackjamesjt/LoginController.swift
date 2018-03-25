@@ -10,6 +10,11 @@ import UIKit
 
 class LoginController: UIViewController {
 
+    @IBAction func logIn(_ sender: Any) {
+        let herokuAppLink = "https://med-bot-hack-uva.herokuapp.com/callback"
+        let logInLink = "https://account-sandbox.safetrek.io/authorize?client_id=m5qXF5ztOdT4cdQtUbZT2grBhF187vw6&scope=openid%20phone%20offline_access&response_type=code&redirect_uri=" + herokuAppLink
+        UIApplication.shared.open(URL(string: logInLink)!)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
