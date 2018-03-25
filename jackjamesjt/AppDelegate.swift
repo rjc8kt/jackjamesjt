@@ -20,11 +20,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
         let urlComponents = URLComponents.init(url: url, resolvingAgainstBaseURL: false)
-        let userInfo = UserDefaults.init()
         let refreshToken = urlComponents?.queryItems?[2].value
         let accessToken = urlComponents?.queryItems?[0].value
-        userInfo.set(refreshToken, forKey: "REFRESH_TOKEN")
-        userInfo.set(accessToken, forKey: "ACCESS_TOKEN")
+        
+        // CORE DATA
+        guard let appDelegate =
+            UIApplication.shared.delegate as? AppDelegate else {
+                return false
+        }
+        
+        let managedContext =
+            appDelegate.persistentContainer.viewContext
+        
+        let entity =
+            NSEntityDescription.entity(forEntityName: "Tokens",
+                                       in: managedContext)!
+        
+        let tokens = NSManagedObject( entity: entity, insertInto: managedContext )
+        
+        do {
+            try managedContext.save()
+        } catch {
+            print( "Error with saving data" )
+        }
+        // END OF CORE DATA
+        tokens.setValue(refreshToken, forKey: "refreshToken")
+        tokens.setValue(accessToken, forKey: "accessToken")
         
         print ("refresh:", refreshToken!, "access:", accessToken!)
         

@@ -24,9 +24,13 @@ class MessageController: UIViewController {
         
         // Do any additional setup after loading the view, typically from a nib.
         
+        self.navigationItem.hidesBackButton = true;
+
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear( animated )
         ChatBox.becomeFirstResponder()
     }
 

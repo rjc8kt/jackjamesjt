@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class LoginController: UIViewController {
 
@@ -16,9 +17,45 @@ class LoginController: UIViewController {
         UIApplication.shared.open(URL(string: logInLink)!)
     }
     override func viewDidLoad() {
+        // CORE DATA
+        guard let appDelegate =
+            UIApplication.shared.delegate as? AppDelegate else {
+                return
+        }
+        
+        let managedContext =
+            appDelegate.persistentContainer.viewContext
+        
+        let fetchRequest =
+            NSFetchRequest<NSManagedObject>(entityName: "Tokens")
+        
+        do {
+            let results = try managedContext.fetch( fetchRequest )
+            if ( results.count > 0 ) {
+                let latest = results[results.count - 1]
+                
+                if ( latest.value(forKey: "refreshToken" ) == nil ) {
+                    super.viewDidLoad()
+                    return
+                }
+                
+                let latrefToken = latest.value(forKeyPath: "refreshToken") as! String
+                print( latrefToken )
+                let lataccToken = latest.value(forKeyPath: "accessToken") as! String
+                
+                if ( lataccToken != "" ) {
+                    let viewController: UIViewController = self.storyboard!.instantiateViewController(withIdentifier: "MessageController")
+                    self.navigationController?.pushViewController(viewController, animated: false)
+                }
+            }
+        } catch {
+            print( "Could not fetch." )
+        }
+        // END OF CORE DATA
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
     }
 
     override func didReceiveMemoryWarning() {
