@@ -50,9 +50,6 @@
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <textInputTraits key="textInputTraits"/>
-                                                    <connections>
-                                                        <action selector="text:" destination="DNt-YF-n74" eventType="editingDidEnd" id="zGc-9R-v5E"/>
-                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <color key="backgroundColor" red="0.92835168393782386" green="0.92835168393782386" blue="0.92835168393782386" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -64,6 +61,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="messageText" destination="yN8-jF-1e9" id="8Ho-xD-x4W"/>
                                             <outlet property="text" destination="yN8-jF-1e9" id="f8a-Xq-er1"/>
                                         </connections>
                                     </tableViewCell>
@@ -97,7 +95,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <exit id="DNt-YF-n74" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1040.8" y="104.7976011994003"/>
         </scene>
