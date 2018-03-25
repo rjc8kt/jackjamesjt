@@ -37,7 +37,8 @@ class MessageController: UIViewController, UITableViewDelegate, UITableViewDataS
         self.chatTableView.tableFooterView = UIView()  // it's just 1 line, awesome!
         
         self.navigationItem.hidesBackButton = true
-    
+        self.navigationItem.title = "medbot"
+        
         NotificationCenter.default.addObserver(self, selector: #selector(MessageController.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(MessageController.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
@@ -48,7 +49,13 @@ class MessageController: UIViewController, UITableViewDelegate, UITableViewDataS
         chatTableView.beginUpdates()
         messageItems.append([message, fromUser])
         let newIndexPath = IndexPath(row: messageItems.count-1, section: 0)
-        chatTableView.insertRows(at: [newIndexPath], with: UITableViewRowAnimation.left)
+        let messageFromUser = messageItems[messageItems.count - 1][1] as! Bool
+        
+        if messageFromUser {
+            chatTableView.insertRows(at: [newIndexPath], with: UITableViewRowAnimation.right)
+        } else {
+            chatTableView.insertRows(at: [newIndexPath], with: UITableViewRowAnimation.left)
+        }
         chatTableView.endUpdates()
     }
     
@@ -175,7 +182,7 @@ class MessageController: UIViewController, UITableViewDelegate, UITableViewDataS
             layer.masksToBounds = false
         }
 
-//        let messageFromUser = messageItems[indexPath.row][1] as! Bool
+        
 //        if messageFromUser {
 //            cell.messageText.textAlignment = NSTextAlignment.right
 //            cell.leftConstraint?.constant = 10.0
@@ -198,6 +205,8 @@ class MessageController: UIViewController, UITableViewDelegate, UITableViewDataS
 //
 //        cell.contentView.setNeedsLayout()
 //        cell.contentView.layoutIfNeeded()
+        
+        
         
         return cell
     }
