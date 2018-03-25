@@ -8,10 +8,14 @@
 
 import UIKit
 import CoreData
+import AVFoundation
+import ApiAI
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    let apiai = ApiAI.shared()!
+    
     var window: UIWindow?
 
 
