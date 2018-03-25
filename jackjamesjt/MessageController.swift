@@ -34,6 +34,7 @@ class MessageController: UIViewController, UITableViewDelegate, UITableViewDataS
 //        self.chatTableView.separatorStyle = UITableViewCellSeparatorStyle.none
         self.chatTableView.rowHeight = UITableViewAutomaticDimension
         self.chatTableView.estimatedRowHeight = 140
+        self.chatTableView.tableFooterView = UIView()  // it's just 1 line, awesome!
         
         self.navigationItem.hidesBackButton = true
     
